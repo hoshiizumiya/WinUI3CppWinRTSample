@@ -4,7 +4,8 @@
 #include <winrt/Windows.Graphics.Display.h>
 #include <iostream>
 
-#include"BlankWindow.xaml.h"
+#include "BlankWindow.xaml.h"
+#include "UserMainPage.xaml.h"
 
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
@@ -39,7 +40,7 @@ namespace winrt::WinUI3App1C__::implementation
 	/// </summary>
 	/// <param name="e">Details about the launch request and process.</param>
 	void App::OnLaunched([[maybe_unused]] LaunchActivatedEventArgs const& e)
-	{
+		 {
 		// 设置屏幕方向
 		winrt::Windows::Graphics::Display::DisplayInformation::AutoRotationPreferences(
 			winrt::Windows::Graphics::Display::DisplayOrientations::Landscape);
@@ -49,12 +50,12 @@ namespace winrt::WinUI3App1C__::implementation
 		//std::wcout << L"Current DPI: " << dpi << std::endl;
 
 
-		// 启动逻辑
-		//window = make<MainWindow>();
-		//window.Content(); //设置啥的？
-		//window.Activate();
+		//启动逻辑
+		window = make<MainWindow>();
+		//MainWindow.Activate()
+		window.Content(make<UserMainPage>());
+		window.Activate();
 		//make<BlankWindow>().Activate();
-		make<UserMainPage>().Activate();
-
+		
 	}
 }

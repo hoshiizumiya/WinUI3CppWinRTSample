@@ -1,9 +1,8 @@
-namespace WinUI3App1C__
+﻿namespace WinUI3App1C__
 {
     [default_interface]
     runtimeclass BlankWindow : Microsoft.UI.Xaml.Window
     {
         BlankWindow();
-        Int32 MyProperty;
     }
 }

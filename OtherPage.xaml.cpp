@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "OtherPage.xaml.h"
 #if __has_include("OtherPage.g.cpp")
 #include "OtherPage.g.cpp"
@@ -12,13 +12,4 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
-    int32_t OtherPage::MyProperty()
-    {
-        throw hresult_not_implemented();
-    }
-
-    void OtherPage::MyProperty(int32_t /* value */)
-    {
-        throw hresult_not_implemented();
-    }
 }

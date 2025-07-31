@@ -1,9 +1,8 @@
-namespace WinUI3App1C__
+﻿namespace WinUI3App1C__
 {
     [default_interface]
     runtimeclass UserMainPage : Microsoft.UI.Xaml.Controls.Page
     {
         UserMainPage();
-        Int32 MyProperty;
     }
 }

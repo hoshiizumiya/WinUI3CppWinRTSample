@@ -9,7 +9,11 @@
     Loaded="Page_Loaded"
     mc:Ignorable="d">
 
-    <NavigationView IsSettingsVisible="True" ItemInvoked="NavigationView_ItemInvoked">
+    <NavigationView
+        x:Name="nav"
+        BackRequested="nav_BackRequested"
+        IsSettingsVisible="True"
+        ItemInvoked="NavigationView_ItemInvoked">
         <NavigationView.MenuItems>
             <NavigationViewItem
                 Content="home"
@@ -22,7 +26,8 @@
         </NavigationView.MenuItems>
 
         <NavigationView.Content>
-            <Frame x:Name="mainFrame"/> <!--绑定导航-->
+            <Frame x:Name="mainFrame" Navigated="mainFrame_Navigated" /> 
+            <!--  绑定导航  -->
         </NavigationView.Content>
     </NavigationView>
 </Page>

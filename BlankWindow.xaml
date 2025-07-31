@@ -25,7 +25,6 @@
                 Grid.RowSpan="2"
                 Grid.Column="0"
         Width="auto"
-        Grid.Row="1"
         IsTabStop="False"
         PaneDisplayMode="Left">
         <NavigationView.MenuItems>

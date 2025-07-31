@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "BlankWindow.xaml.h"
 #if __has_include("BlankWindow.g.cpp")
 #include "BlankWindow.g.cpp"
@@ -12,13 +12,5 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
-    int32_t BlankWindow::MyProperty()
-    {
-        throw hresult_not_implemented();
-    }
 
-    void BlankWindow::MyProperty(int32_t /* value */)
-    {
-        throw hresult_not_implemented();
-    }
 }

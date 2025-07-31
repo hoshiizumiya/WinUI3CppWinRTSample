@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
-#include "HomePage.xaml.h"
-#if __has_include("HomePage.g.cpp")
-#include "HomePage.g.cpp"
+#include "SettingsPage.xaml.h"
+#if __has_include("SettingsPage.g.cpp")
+#include "SettingsPage.g.cpp"
 #endif
 
 using namespace winrt;
@@ -12,4 +12,5 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
+
 }

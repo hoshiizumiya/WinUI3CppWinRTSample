@@ -17,7 +17,7 @@ namespace winrt::WinUI3App1C__::implementation
 	void UserMainPage::Page_Loaded(IInspectable const& sender, RoutedEventArgs const& e)
 	{
 		InitializeComponent();
-		// 在此处添加对界面元素的访问或其他初始化逻辑
+		// 在此处添加对界面元素的访问或其他初始化逻辑，注意要使用 Loaded 方法
 	}
 
 
@@ -60,4 +60,14 @@ void winrt::WinUI3App1C__::implementation::UserMainPage::NavigationView_ItemInvo
 		}
 
 	}
+}
+
+void winrt::WinUI3App1C__::implementation::UserMainPage::mainFrame_Navigated(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+	nav().IsBackEnabled(mainFrame().CanGoBack());
+}
+
+void winrt::WinUI3App1C__::implementation::UserMainPage::nav_BackRequested(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Microsoft::UI::Xaml::Controls::NavigationViewBackRequestedEventArgs const& args)
+{
+	mainFrame().GoBack();
 }

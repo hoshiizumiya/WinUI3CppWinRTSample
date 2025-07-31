@@ -18,15 +18,17 @@ namespace winrt::WinUI3App1C__::implementation
 	public:
 		MainWindow();
 
+		// 实现绑定的属性
 		winrt::Windows::Foundation::Collections::IObservableVector<hstring> collection();//alt+enter直接快速创建定义
 		//winrt::event_token Loaded(winrt::Microsoft::UI::Xaml::RoutedEventHandler const& handler);
 		//
-		//void Loaded(event_token const& tocken);
+		//void Loaded(event_token const& token);
 
 		void addManualListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
 		void addSourceItemButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
 		void addBoundListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
 
+		void Button_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
 	};
 }
 

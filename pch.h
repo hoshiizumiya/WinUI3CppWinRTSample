@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <windows.h>
 #include <unknwn.h>
 #include <restrictederrorinfo.h>
@@ -7,6 +7,10 @@
 // Undefine GetCurrentTime macro to prevent
 // conflict with Storyboard::GetCurrentTime
 #undef GetCurrentTime
+
+// This is required otherwise VSDESIGNER will have linker errors.
+#define _VSDESIGNER_DONT_LOAD_AS_DLL
+
 
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Foundation.Collections.h>
