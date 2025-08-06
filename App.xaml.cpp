@@ -40,7 +40,7 @@ namespace winrt::WinUI3App1C__::implementation
 	/// </summary>
 	/// <param name="e">Details about the launch request and process.</param>
 	void App::OnLaunched([[maybe_unused]] LaunchActivatedEventArgs const& e)
-		 {
+	{
 		// 设置屏幕方向
 		winrt::Windows::Graphics::Display::DisplayInformation::AutoRotationPreferences(
 			winrt::Windows::Graphics::Display::DisplayOrientations::Landscape);
@@ -53,9 +53,9 @@ namespace winrt::WinUI3App1C__::implementation
 		//启动逻辑
 		window = make<MainWindow>();
 		//MainWindow.Activate()
-		window.Content(make<UserMainPage>());
+		//window.Content(make<UserMainPage>()); // in this place , we can set the content of the window to a UserMainPage
 		window.Activate();
 		//make<BlankWindow>().Activate();
-		
+
 	}
 }

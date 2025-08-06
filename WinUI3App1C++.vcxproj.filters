@@ -58,7 +58,6 @@
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="缩放.md" />
     <None Include="packages.config" />
     <None Include="缩放.md" />
   </ItemGroup>

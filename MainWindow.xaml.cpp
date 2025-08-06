@@ -11,7 +11,9 @@ using namespace Microsoft::UI::Xaml;
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 namespace winrt::WinUI3App1C__::implementation
 {
+	// 此为引用计数的 debug ，请忽略它 /This is a debug for reference counting, please ignore it
 	// 修正1: 正确声明和定义 DebugGetCurrentRefCount，参数类型为 IInspectable 的 const 引用
+	// Correctly declare and define DebugGetCurrentRefCount, with parameter type as const reference of IInspectable
 	bool DebugGetCurrentRefCount(winrt::Windows::Foundation::IInspectable const& obj, uint32_t& refCount)
 	{
 		IUnknown* pUnk = winrt::get_unknown(obj);
@@ -35,10 +37,14 @@ namespace winrt::WinUI3App1C__::implementation
 			OutputDebugStringW((L"LeakClassTestLeakWindowUnit constructed with ref count = " + std::to_wstring(refCount)).c_str());
 			OutputDebugStringW(L"\r\n");
 		}
-		//Loaded({ [this](auto&&,auto&&) {auto xamlRoot = this->Content().XamlRoot(); }
-		//	   });
-		// 修正3: 确保 sourceList 和 sourceArray 已正确定义
-		sourceList().ItemsSource(sourceArray);//直接使用代码绑定，访问修改 xaml 界面中的元素，简单直接，无需额外的 IDL 定义和属性访问器
+		// 因为它是一个 Window 类，所以没有 Loaded 事件，因此我们不能使用 Loaded 事件来访问 XAML 元素，我在UserMainPage.xaml.cpp 中使用了 Loaded 事件作为示例
+		// Because it is a Window class, it do not have Loaded event, so we can not use Loaded event to access XAML elements
+		//this->Loaded([this](auto&&, auto&&) {auto xamlRoot = this->Content().XamlRoot(); });
+
+
+		// 确保 sourceList 和 sourceArray 已正确定义
+		sourceList().ItemsSource(sourceArray);//直接使用代码绑定，访问修改 xaml 界面中的元素，简单直接，无需额外的 IDL 定义和属性访问器 
+		// Directly bind using code, access and modify elements in the XAML interface, simple and direct, no additional IDL definitions and property accessors needed
 	}
 
 	winrt::Windows::Foundation::Collections::IObservableVector<hstring> MainWindow::collection()
@@ -48,7 +54,8 @@ namespace winrt::WinUI3App1C__::implementation
 
 	//    myButton().Content(box_value(L"Clicked"));
 
-	void winrt::WinUI3App1C__::implementation::MainWindow::addManualListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
+	// 1.手动添加项目方式 manualList
+	void MainWindow::addManualListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
 	{
 		manualIndex++;
 		manualList().Items().Append(box_value(hstring{ L"Item" + to_hstring(manualIndex) }));
@@ -61,6 +68,7 @@ namespace winrt::WinUI3App1C__::implementation
 }
 
 //vs 自动添加 xaml 绑定在这里声明，此处我们不再向上移动到命名空间中添加工作量
+// 2. ItemsSource 绑定方式(sourceList)
 void winrt::WinUI3App1C__::implementation::MainWindow::addSourceItemButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {
 	sourceIndex++;
@@ -71,6 +79,7 @@ void winrt::WinUI3App1C__::implementation::MainWindow::addSourceItemButton_Click
 	}
 }
 
+// 3. ItemsSource 绑定方式(boundList)
 void winrt::WinUI3App1C__::implementation::MainWindow::addBoundListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {
 	boundIndex++;

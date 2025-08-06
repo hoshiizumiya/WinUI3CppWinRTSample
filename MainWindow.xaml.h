@@ -11,7 +11,10 @@ namespace winrt::WinUI3App1C__::implementation
 		int32_t sourceIndex = 0;
 		int32_t boundIndex = 0;
 
+		//
 		winrt::Windows::Foundation::Collections::IObservableVector<hstring> sourceArray{ winrt::single_threaded_observable_vector<hstring>() };//光标处在当前行或选中目标行时ctrl+D即可快速复制该行
+
+		//
 		winrt::Windows::Foundation::Collections::IObservableVector<hstring> boundArray{ winrt::single_threaded_observable_vector<hstring>() };
 
 
@@ -24,8 +27,12 @@ namespace winrt::WinUI3App1C__::implementation
 		//
 		//void Loaded(event_token const& token);
 
+
+		//手动添加项按钮点击事件
 		void addManualListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
+		//
 		void addSourceItemButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
+		//
 		void addBoundListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
 
 		void Button_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);

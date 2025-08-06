@@ -13,10 +13,14 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
+	UserMainPage::UserMainPage()
+	{
+		InitializeComponent();
+		//this->Loaded({ this, &UserMainPage::Page_Loaded });
+	}
 	//页面加载事件，参数省略了命名空间前缀
 	void UserMainPage::Page_Loaded(IInspectable const& sender, RoutedEventArgs const& e)
 	{
-		InitializeComponent();
 		// 在此处添加对界面元素的访问或其他初始化逻辑，注意要使用 Loaded 方法
 	}
 
