@@ -51,10 +51,10 @@ void winrt::WinUI3App1C__::implementation::UserMainPage::NavigationView_ItemInvo
 	}
 	else
 	{
-		//为确定哪个页面会被请求，已给每个页面设置独一无二的的 Tag 
-		//Tag 在 xaml 中被自动解析并装箱成一个 IInspectable 属性。IInspectable 是所有 WinRT 接口的根属性，使用拆箱函数转化为目标 String 类型字符串
+		// 为确定哪个页面会被请求，已给每个页面设置独一无二的的 Tag 
+		// Tag 在 xaml 中被自动解析并装箱成一个 IInspectable 属性。IInspectable 是所有 WinRT 接口的根属性，使用拆箱函数转化为目标 String 类型字符串
 		// 这样设计主要为了语言互操作性 C# 的 object、JS 的 Object、C++ 的 IInspectable 可以相互转换
-		//使用 unbox_value<T>()	从 IInspectable 提取具体类型
+		// 使用 unbox_value<T>()	从 IInspectable 提取具体类型
 		hstring tag = unbox_value<hstring>(args.InvokedItemContainer().Tag());
 		if (tag == L"home")
 			openHomePage();

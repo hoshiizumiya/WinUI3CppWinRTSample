@@ -12,4 +12,23 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
+	HomePage::HomePage()
+	{
+		InitializeComponent();
+		// 在此处添加对界面元素的访问或其他初始化逻辑
+		// Add access to interface elements or other initialization logic here
+	}
+	//
+	//void HomePage::OnNavigatedTo(winrt::Microsoft::UI::Xaml::Navigation::NavigationEventArgs const& e)
+	//{
+	//	// 在此处添加对界面元素的访问或其他初始化逻辑
+	//	// Add access to interface elements or other initialization logic here
+	//}
+
+	//void OnNavigatedFrom(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const& e)
+	//{
+	//	// 在此处添加对界面元素的访问或其他清理逻辑
+	//	// Add access to interface elements or other cleanup logic here
+	//}
+
 }

@@ -6,11 +6,9 @@ namespace winrt::WinUI3App1C__::implementation
 {
     struct HomePage : HomePageT<HomePage>
     {
-        HomePage()
-        {
-            // Xaml objects should not call InitializeComponent during construction.
-            // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
-        }
+        HomePage();/*
+        void OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const& e);
+		void OnNavigatedFrom(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const& e);*/
 
     };
 }

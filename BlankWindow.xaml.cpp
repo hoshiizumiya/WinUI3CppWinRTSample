@@ -12,5 +12,10 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
-
+	BlankWindow::BlankWindow()
+	{
+		InitializeComponent();
+		// 在此处添加对界面元素的访问或其他初始化逻辑
+		// Add access to interface elements or other initialization logic here
+	}
 }

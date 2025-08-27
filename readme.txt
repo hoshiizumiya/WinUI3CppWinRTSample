@@ -1,6 +1,9 @@
+﻿========================================================================
+    Welcome To Our WinUI3 C++ Sample Project
 ========================================================================
-    WinUI3App1C++ Project Overview
-========================================================================
+
+You can clone this project from GitHub, open the sln file to check in Visual Studio 2022 and build and run it.
+
 
 This project demonstrates how to get started writing WinUI3 apps directly
 with standard C++, using the Windows App SDK and C++/WinRT packages and

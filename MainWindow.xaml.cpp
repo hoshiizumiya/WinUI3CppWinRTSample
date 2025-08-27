@@ -43,7 +43,8 @@ namespace winrt::WinUI3App1C__::implementation
 
 
 		// 确保 sourceList 和 sourceArray 已正确定义
-		sourceList().ItemsSource(sourceArray);//直接使用代码绑定，访问修改 xaml 界面中的元素，简单直接，无需额外的 IDL 定义和属性访问器 
+		sourceList().ItemsSource(sourceArray);
+		//直接使用代码绑定，访问修改 xaml 界面中的元素，简单直接，无需额外的 IDL 定义和属性访问器 
 		// Directly bind using code, access and modify elements in the XAML interface, simple and direct, no additional IDL definitions and property accessors needed
 	}
 
@@ -58,12 +59,14 @@ namespace winrt::WinUI3App1C__::implementation
 	void MainWindow::addManualListButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
 	{
 		manualIndex++;
-		manualList().Items().Append(box_value(hstring{ L"Item" + to_hstring(manualIndex) }));
+		manualList().Items().Append(box_value(hstring{ L"Item" + to_hstring(manualIndex) })); // 我们直接通过名字使用 Items() 属性访问方法来访问 ItemsSource 的集合
 
 		if (manualList().SelectedItem() == nullptr)
 		{
 			manualList().SelectedIndex(0);
 		}
+		::SetCursor(LoadCursor(nullptr, IDC_ARROW));
+
 	}
 }
 

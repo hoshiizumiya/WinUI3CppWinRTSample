@@ -6,7 +6,16 @@
 
 #include "BlankWindow.xaml.h"
 #include "UserMainPage.xaml.h"
+#include <winrt/Microsoft.UI.Windowing.h>
+#include <winrt/Microsoft.UI.Interop.h>
+#include <Microsoft.UI.Xaml.Window.h>
 
+// 包含我们的Helper类
+#include "Helpers/WindowHelper.h"
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt;
+using namespace Microsoft::UI::Windowing;
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
 
@@ -35,6 +44,12 @@ namespace winrt::WinUI3App1C__::implementation
 #endif
 	}
 
+	// 显式析构函数实现
+	App::~App()
+	{
+		// unique_ptr 会自动清理
+	}
+
 	/// <summary>
 	/// Invoked when the application is launched.
 	/// </summary>
@@ -49,13 +64,38 @@ namespace winrt::WinUI3App1C__::implementation
 		//auto dpi = uiSettings.TextScaleFactor(); // 获取当前 DPI 缩放比例
 		//std::wcout << L"Current DPI: " << dpi << std::endl;
 
-
 		//启动逻辑
 		window = make<MainWindow>();
-		//MainWindow.Activate()
 		//window.Content(make<UserMainPage>()); // in this place , we can set the content of the window to a UserMainPage
+		
+		// 使用WindowHelper设置窗口尺寸限制
+		//SetupWindowSizeConstraints();
+		
 		window.Activate();
 		//make<BlankWindow>().Activate();
-
 	}
+
+	//void App::SetupWindowSizeConstraints()
+	//{
+	//	try {
+	//		// 创建窗口大小管理器
+	//		m_windowManager = std::make_unique<WinUI3Helpers::ModernWindowSizeManager>();
+	//		
+	//		// 初始化管理器
+	//		m_windowManager->Initialize(window);
+	//		
+	//		// 设置最小尺寸为 800x600
+	//		m_windowManager->SetMinSize(800, 600);
+	//		
+	//		// 设置最大尺寸为 1600x1200
+	//		m_windowManager->SetMaxSize(1600, 1200);
+	//	}
+	//	catch (const std::exception& ex) {
+	//		// 处理异常
+	//		std::wcout << L"Failed to setup window size constraints: " << std::endl;
+	//	}
+	//	catch (...) {
+	//		std::wcout << L"Unknown error while setting up window constraints" << std::endl;
+	//	}
+	//}
 }

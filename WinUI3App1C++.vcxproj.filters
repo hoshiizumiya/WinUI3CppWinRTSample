@@ -47,6 +47,9 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{758cd6b9-7a32-4233-8057-6b842da98a5b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{3fc6ce4a-f8bc-40bb-b638-84919225bc02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
@@ -59,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="缩放.md" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
