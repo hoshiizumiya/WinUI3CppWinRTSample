@@ -72,7 +72,10 @@ namespace winrt::WinUI3App1C__::implementation
 		//SetupWindowSizeConstraints();
 		
 		window.Activate();
-		//make<BlankWindow>().Activate();
+		make<BlankWindow>().Activate();
+		auto window2 = make<MainWindow>();
+		window2.Content(make<UserMainPage>());
+		window2.Activate();
 	}
 
 	//void App::SetupWindowSizeConstraints()
