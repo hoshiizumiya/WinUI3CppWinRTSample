@@ -19,62 +19,62 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-    <NavigationView
-        x:Name="nvSample8"
+            <NavigationView
+                x:Name="nvSample8"
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Grid.Column="0"
-        Width="auto"
-        IsTabStop="False"
-        PaneDisplayMode="Left">
-        <NavigationView.MenuItems>
-            <NavigationViewItem
-                Content="Home"
-                Icon="Home"
-                Tag="SamplePage1"
-                ToolTipService.ToolTip="Home" />
-            
-            
-            
-            <NavigationViewItem
-                Content="Account"
-                Icon="Contact"
-                Tag="SamplePage2"
-                ToolTipService.ToolTip="Account">
-                <NavigationViewItem.MenuItems>
+                Width="auto"
+                IsTabStop="False"
+                PaneDisplayMode="Left">
+                <NavigationView.MenuItems>
                     <NavigationViewItem
-                        Content="Mail"
-                        Icon="Mail"
-                        Tag="SamplePage3"
-                        ToolTipService.ToolTip="Mail" />
+                        Content="Home"
+                        Icon="Home"
+                        Tag="SamplePage1"
+                        ToolTipService.ToolTip="Home" />
+
+
+
                     <NavigationViewItem
-                        Content="Calendar"
-                        Icon="Calendar"
-                        Tag="SamplePage4"
-                        ToolTipService.ToolTip="Calendar" />
-                </NavigationViewItem.MenuItems>
-            </NavigationViewItem>
-            <NavigationViewItem
-                Content="Document options"
-                Icon="Page2"
-                SelectsOnInvoked="False"
-                ToolTipService.ToolTip="Document options">
-                <NavigationViewItem.MenuItems>
+                        Content="Account"
+                        Icon="Contact"
+                        Tag="SamplePage2"
+                        ToolTipService.ToolTip="Account">
+                        <NavigationViewItem.MenuItems>
+                            <NavigationViewItem
+                                Content="Mail"
+                                Icon="Mail"
+                                Tag="SamplePage3"
+                                ToolTipService.ToolTip="Mail" />
+                            <NavigationViewItem
+                                Content="Calendar"
+                                Icon="Calendar"
+                                Tag="SamplePage4"
+                                ToolTipService.ToolTip="Calendar" />
+                        </NavigationViewItem.MenuItems>
+                    </NavigationViewItem>
                     <NavigationViewItem
-                        Content="Create new"
-                        Icon="NewFolder"
-                        Tag="SamplePage5"
-                        ToolTipService.ToolTip="Create new" />
-                    <NavigationViewItem
-                        Content="Upload file"
-                        Icon="OpenLocal"
-                        Tag="SamplePage6"
-                        ToolTipService.ToolTip="Upload file" />
-                </NavigationViewItem.MenuItems>
-            </NavigationViewItem>
-        </NavigationView.MenuItems>
-        <Frame x:Name="contentFrame8" />
-    </NavigationView>
+                        Content="Document options"
+                        Icon="Page2"
+                        SelectsOnInvoked="False"
+                        ToolTipService.ToolTip="Document options">
+                        <NavigationViewItem.MenuItems>
+                            <NavigationViewItem
+                                Content="Create new"
+                                Icon="NewFolder"
+                                Tag="SamplePage5"
+                                ToolTipService.ToolTip="Create new" />
+                            <NavigationViewItem
+                                Content="Upload file"
+                                Icon="OpenLocal"
+                                Tag="SamplePage6"
+                                ToolTipService.ToolTip="Upload file" />
+                        </NavigationViewItem.MenuItems>
+                    </NavigationViewItem>
+                </NavigationView.MenuItems>
+                <Frame x:Name="contentFrame8" />
+            </NavigationView>
 
             <TextBox Grid.Column="1" Header="textboxview" />
 

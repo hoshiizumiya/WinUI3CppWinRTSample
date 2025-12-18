@@ -3,7 +3,7 @@
 #if __has_include("OtherPage.g.cpp")
 #include "OtherPage.g.cpp"
 #endif
-
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
 
@@ -12,4 +12,10 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::WinUI3App1C__::implementation
 {
+	OtherPage::OtherPage()
+	{
+		InitializeComponent();
+		this->NavigationCacheMode(winrt::Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Enabled);
+
+	}
 }
